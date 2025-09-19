@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#63cf17",
+                        "background-light": "#f7f8f6",
+                        "background-dark": "#182111",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex min-h-screen">
+<aside class="w-64 bg-background-light dark:bg-background-dark p-4 border-r border-primary/20 dark:border-primary/30">
+<div class="flex items-center gap-2 mb-10">
+<svg class="h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M3.354 3.354a.75.75 0 011.06 0L8 7.94l3.586-3.586a.75.75 0 011.06 1.06L9.06 9l3.586 3.586a.75.75 0 01-1.06 1.06L8 10.06l-3.586 3.586a.75.75 0 01-1.06-1.06L6.94 9 3.354 4.414a.75.75 0 010-1.06z" fill-rule="evenodd"></path>
+</svg>
+<h1 class="text-xl font-bold text-background-dark dark:text-background-light">FarmLink</h1>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded text-background-dark/70 dark:text-background-light/70 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-background-dark dark:hover:text-background-light" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M218.83,103.77l-80-75.48a1.14,1.14,0,0,1-.11-.11,16,16,0,0,0-21.53,0l-.11.11L37.17,103.77A16,16,0,0,0,32,115.55V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V160h32v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V115.55A16,16,0,0,0,218.83,103.77ZM208,208H160V160a16,16,0,0,0-16-16H112a16,16,0,0,0-16,16v48H48V115.55l.11-.1L128,40l79.9,75.43.11.1Z"></path></svg>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-background-dark/70 dark:text-background-light/70 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-background-dark dark:hover:text-background-light" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"></path></svg>
+<span>Workers</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-background-dark/70 dark:text-background-light/70 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-background-dark dark:hover:text-background-light" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"></path></svg>
+<span>Jobs</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded text-background-dark/70 dark:text-background-light/70 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-background-dark dark:hover:text-background-light" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M152,120H136V56h8a32,32,0,0,1,32,32,8,8,0,0,0,16,0,48.05,48.05,0,0,0-48-48h-8V24a8,8,0,0,0-16,0V40h-8a48,48,0,0,0,0,96h8v64H104a32,32,0,0,1-32-32,8,8,0,0,0-16,0,48.05,48.05,0,0,0,48,48h16v16a8,8,0,0,0,16,0V216h16a48,48,0,0,0,0-96Zm-40,0a32,32,0,0,1,0-64h8v64Zm40,80H136V136h16a32,32,0,0,1,0,64Z"></path></svg>
+<span>Payments</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded bg-primary/20 dark:bg-primary/30 text-background-dark dark:text-background-light font-medium" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216Z"></path></svg>
+<span>Notifications</span>
+</a>
+</nav>
+</aside>
+<main class="flex-1 p-8">
+<div class="max-w-4xl mx-auto">
+<header class="mb-8">
+<h1 class="text-4xl font-bold text-background-dark dark:text-background-light">Notifications</h1>
+<p class="text-background-dark/60 dark:text-background-light/60 mt-1">Manage your alerts and updates.</p>
+</header>
+<div class="space-y-12">
+<div>
+<h2 class="text-xl font-semibold mb-4 text-background-dark dark:text-background-light">Today</h2>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-4 rounded-lg bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30">
+<div class="w-12 h-12 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAV2I_erHdsUGTALXDIeQ0e5KFH5ORtXG_7p8i6IWqwxhOrUaOUFFbJaMsiMXJc1srU8qm4c2VI09scHyh4ZiukpUGXmRVc_7hfe7a3S5OHyDe1cueeMTbZtxECXw06EQPLv8gFxFEIr_hzAjvTJhgLhBCcXkaxrkuaBZLCVw9UvPQVICMh6YyDYUoHN9iTjte7gIYjZwU9S_6_e0Iu1FWpLcj-UXJYzx0rWp6NyiW9WOqT5PWWxO2A0P7tUTf3LybBJvQPwrDD_Zs");'></div>
+<div class="flex-1">
+<p class="font-medium text-background-dark dark:text-background-light">New worker available</p>
+<p class="text-sm text-background-dark/60 dark:text-background-light/60">10:30 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-lg bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30">
+<div class="w-12 h-12 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD7gWHzoOwMhgjIjjMvozjWeX8qbG10fBiwuuAh_mk26WL6k5ab472dFV9xx0ktbrP5HgN7W9Ks6-6tP9PDtIidYRE2YVh0moOmDOGH5-6V9ITw9sjlPU031CjpwL5-CsPO0WS-AL8NR1Tz8LeyBHmswLK7AZ3oAOsQUiweqda1jby57ZwDsz-xTU50feZR4kyYBDhsIHoA_8XMwjkg1XlHizLInRXvToAIY5Dg8uwTxAzRlO8ldteM2X_79U8Fnf6JRi0tuosAdPc");'></div>
+<div class="flex-1">
+<p class="font-medium text-background-dark dark:text-background-light">Labor request received</p>
+<p class="text-sm text-background-dark/60 dark:text-background-light/60">11:45 AM</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-xl font-semibold mb-4 text-background-dark dark:text-background-light">Yesterday</h2>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-4 rounded-lg bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30">
+<div class="w-12 h-12 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCCp5rqLhvqmZhFHPUL8VfMN_R43QVYQzSwtiYkU8DQT7hVyqXNgscvR5vIj8pSvzAAI4_cl6gi8T9HNvRPFJApNct_P0lTBDA_9UB4XPZsS6kxhWa8MhCOijnX2_GbEg-glK_r4AwPIX6-dDX8hdfm2ku4wq45YaRGJzg-B8rJi4z0AaayhNR-rzXFSG2jwjxEHPRboHBraO49AJbzntzt_zIYkMkdh_v21rA-FE8pmg2qTa6VGRCJIA8KNoLAvt5-GYOgU2WGl8g");'></div>
+<div class="flex-1">
+<p class="font-medium text-background-dark dark:text-background-light">Payment reminder</p>
+<p class="text-sm text-background-dark/60 dark:text-background-light/60">2:15 PM</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-lg bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30">
+<div class="w-12 h-12 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDFp5CdVZW7zScXnX5WRZYP8-ZWUAfNAgjWvCgD9YvXz1MzVRO60hViO2GklhuX7V8zVYcR3KsbMqDTCAaoyoOwo9_YWKWa42ofAPn11JHortKEC-45JP4fLq8BmejgyGHkwvwwUCkW8sAc8-jXf5x6Lt0SUsqn_7-JWt1UlSGV0V69Uc9zPCVrM8fTscP60xqLkM6L7tZ5ZdjuUQoLjdPdz6kJV8n3_ids2nB-C7P0406k-6SR8TiF_7An3tXu43nIqiI0bSubl_Q");'></div>
+<div class="flex-1">
+<p class="font-medium text-background-dark dark:text-background-light">New worker available</p>
+<p class="text-sm text-background-dark/60 dark:text-background-light/60">3:30 PM</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-lg bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30">
+<div class="w-12 h-12 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCLMjKvShd5bUw4BWzTaouQ7zGi9hBflO0bq3TA_erYtz55WXA4PP4BTw0o3RNftJKFd7QCybxS5QLHuMXCCEpCGsnwSQTW-OTcBVTXmYKyZAJ3zXk5NkIuAcRZ8rUCZLWCEF7PQuDGDbUNqRNaBHP35a6iepBTQeNq1m_PNgpGkRNNXK6ZQQ28oZ4fW3ykYkCOLXAStDLXoaIW3nUeLCpxAyh26YEz6ACp-18MH2LqCxz98qGAWavegh7KKO32E5XRbwGMWM_o93I");'></div>
+<div class="flex-1">
+<p class="font-medium text-background-dark dark:text-background-light">Labor request received</p>
+<p class="text-sm text-background-dark/60 dark:text-background-light/60">4:45 PM</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-xl font-semibold mb-4 text-background-dark dark:text-background-light">Last Week</h2>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-4 rounded-lg bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30">
+<div class="w-12 h-12 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBmgrqnKt8C8IhyDAfo5nSix3ZgFrRnIiVKSXSPJUCuTwY6DB4I2ON1_KB52o59ida_PHcZ6Y-q2y-ZzS-SpM_vhY3JepLqeZYKC47_ib6xKs5LSXttDLdmnaQW702SiPzRu9F5uJYzc2MNKsPF-83cKCrXSFcs8FiQYlDP2ASu_tk64S2M3Nha_QSOkpo31cc9Swb0PzZm4aibWzb5Se_haGk5gyPVYnjt_mtV6O4hLYOylQApU3k52sG0vyrp6kHyK74rhUI0M6o");'></div>
+<div class="flex-1">
+<p class="font-medium text-background-dark dark:text-background-light">Payment reminder</p>
+<p class="text-sm text-background-dark/60 dark:text-background-light/60">10:00 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-lg bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30">
+<div class="w-12 h-12 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDH4OQ7SkNxPykjxZw_wPssR8I9Clyer1F5zMAx4f7Y54cy1sqMDvZE3DcQrLvJPEJoQMM6Z0A34W6nDABk6Vy_AniP6REvs2JqFIJGSqXjHXF2_wOngtH2Cbz_BMxvY1RSOVfsHX2rXnklTYLsGkRAaduBFNbpmS8enrJ5kP-DG8dy11eN6V4htHToBugBIp6hd7b4XO3MabFZtATmHTNIklUdgTwVadb-nQefTjRgLhXJqTqng6_9dLRHa3yjYCWfW0jqlFdj7xk");'></div>
+<div class="flex-1">
+<p class="font-medium text-background-dark dark:text-background-light">New worker available</p>
+<p class="text-sm text-background-dark/60 dark:text-background-light/60">11:15 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 rounded-lg bg-background-light dark:bg-background-dark border border-primary/20 dark:border-primary/30">
+<div class="w-12 h-12 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAMnZc_-NAN8xc6YaNsEwtti_W6dKfZmt0wG2_D-i7SbtkC0bYSfXh9IzwqdvsGLPST8cAK2Cayk5xvWfK4dH61dSYxWzL8yPDs4KKmyqq5fCQP7cwgp7m0o79fKsE9bWWPDmhcY57sQvlHzD_0WH3BJb4GckBR0QNnd2lJSleNYsdotZeJ4KLe5ofoQOKzZnkxrouPgm7mIWx6Qbd7AwliMP3a9M8t4CIeQ9EIXikkFkVmlYKYAZM9JTql5a0O3ECG4H-IDAYKtBo");'></div>
+<div class="flex-1">
+<p class="font-medium text-background-dark dark:text-background-light">Labor request received</p>
+<p class="text-sm text-background-dark/60 dark:text-background-light/60">12:30 PM</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
