@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Worker Job Dashboard - SyncUp</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3fd411",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#142210",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#131811] dark:text-[#f1f4f0] min-h-screen">
+<div class="max-w-[480px] mx-auto bg-white dark:bg-background-dark min-h-screen flex flex-col shadow-xl">
+<!-- TopAppBar -->
+<header class="flex items-center bg-white dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-50 border-b border-[#dee6db] dark:border-[#2a3a26]">
+<div class="flex size-12 shrink-0 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary" data-alt="User profile picture of a worker" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA5JLpLXTt9uWgptKNFwY6ID2gdERkDG3R10aoeeLO5fqWK5iyMD0UF8lHJNqcxo5TZLMsUHNunNpJPg5JpRrjPadOYT0sIyaN7vAW74WWTRjoeJrJC114g1FsBEAJjsQI5t-et723YHNFIzcakkkXfsEzReMrkJJ45LSZRmsHrKqGuOKEvBadtCoaVqkJeQg1v74YCDz7TAKpV__hBrvhV-NI9N84hjPULuKQ-uqsUTkglpbEKR-GqPKqcFSI68P5_Dajp7wrewKqA");'>
+</div>
+</div>
+<div class="flex-1 px-3">
+<h1 class="text-[#131811] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">SyncUp Jobs</h1>
+<p class="text-[#6b8961] text-xs font-medium">AgriLabour Point</p>
+</div>
+<div class="flex w-12 items-center justify-end">
+<button class="flex size-10 items-center justify-center rounded-lg bg-[#f1f4f0] dark:bg-[#2a3a26] text-[#131811] dark:text-white">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</header>
+<!-- ProfileHeader & Aadhaar Status -->
+<div class="p-4 bg-white dark:bg-background-dark">
+<div class="flex w-full flex-col gap-4">
+<div class="flex gap-4 items-center">
+<div class="flex flex-col flex-1">
+<p class="text-[#131811] dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em]">Rajesh Kumar</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1">verified_user</span>
+<p class="text-primary text-sm font-bold leading-normal">Aadhaar Verified</p>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<div class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                            Level 4
+                        </div>
+<div class="flex items-center gap-1 mt-1 text-[#6b8961]">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="text-sm font-bold">4.9</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ActionPanel: Available for Work -->
+<div class="px-4 pb-4">
+<div class="flex flex-1 flex-row items-center justify-between gap-4 rounded-xl border border-[#dee6db] dark:border-[#2a3a26] bg-white dark:bg-background-dark/50 p-5">
+<div class="flex flex-col gap-0.5">
+<p class="text-[#131811] dark:text-white text-base font-bold leading-tight">Available for Work</p>
+<p class="text-[#6b8961] text-xs font-normal leading-normal">You are visible to nearby farmers</p>
+</div>
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-[#dee6db] dark:bg-[#2a3a26] p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary transition-all duration-300">
+<div class="h-full w-[27px] rounded-full bg-white shadow-md"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- SectionHeader: Map View Context -->
+<div class="px-4 pt-2">
+<div class="relative w-full h-24 rounded-xl overflow-hidden mb-4">
+<div class="absolute inset-0 bg-cover bg-center opacity-80" data-alt="Abstract aerial map of farmland" data-location="Punjab, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCIAw-yc4Vq99boRpdww4aVcpk_yt8lfRZ9KbanC3IFzNLuZZVDyma9yWvO7waOdl_oYdG7R_NG5FuKzZUFyEVjXZzJ_c8WrDCVTybK4SMrV-98PBAel6wZpFa-gXqHYwtseGRkW37ZL9a_JXQ5lpmzKEz1DS-e75E_Fm9aEMmTzR0SGCXHHNGj1xfYLqnKIiJ1RE9wfGGjh8ksM6PVZVXbLWwHt3bjuxFVBBXyWumbQirjrrmHgTZEAm7nFkWaxPX0yK13g0xfyH_t');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-3 left-4 flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-sm">distance</span>
+<span class="text-sm font-bold">Within 10km of Barnala</span>
+</div>
+</div>
+</div>
+<!-- Chips: Filters -->
+<div class="flex gap-2 px-4 pb-4 overflow-x-auto no-scrollbar">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary text-white px-4">
+<span class="text-sm font-bold tracking-tight">All Jobs</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f1f4f0] dark:bg-[#2a3a26] px-4">
+<span class="text-[#131811] dark:text-white text-sm font-medium">Harvesting</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f1f4f0] dark:bg-[#2a3a26] px-4">
+<span class="text-[#131811] dark:text-white text-sm font-medium">Ploughing</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f1f4f0] dark:bg-[#2a3a26] px-4">
+<span class="text-[#131811] dark:text-white text-sm font-medium">Machinery</span>
+</button>
+</div>
+<!-- Job Feed -->
+<div class="flex-1 bg-background-light dark:bg-background-dark/30 px-4 pt-4 rounded-t-3xl border-t border-[#dee6db] dark:border-[#2a3a26]">
+<h2 class="text-[#131811] dark:text-white text-lg font-bold mb-4">Active Task Requests</h2>
+<div class="space-y-4 pb-24">
+<!-- Job Card 1 -->
+<div class="bg-white dark:bg-background-dark p-4 rounded-xl border border-[#dee6db] dark:border-[#2a3a26] shadow-sm">
+<div class="flex justify-between items-start mb-3">
+<div class="flex gap-3">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">agriculture</span>
+</div>
+<div>
+<h3 class="font-bold text-[#131811] dark:text-white">Rice Harvesting</h3>
+<div class="flex items-center gap-1 text-[#6b8961] text-xs">
+<span class="material-symbols-outlined text-xs">location_on</span>
+<span>2.4 km away • Singh Farms</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary text-lg font-bold">₹800</p>
+<p class="text-[#6b8961] text-[10px] uppercase font-bold tracking-tighter">Per Acre</p>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-[#f1f4f0] dark:border-[#2a3a26] pt-3 mt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="text-sm font-bold text-[#131811] dark:text-white">4.8</span>
+<span class="text-[#6b8961] text-xs">(120 reviews)</span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold shadow-sm">
+                            Apply
+                        </button>
+</div>
+</div>
+<!-- Job Card 2 -->
+<div class="bg-white dark:bg-background-dark p-4 rounded-xl border border-[#dee6db] dark:border-[#2a3a26] shadow-sm">
+<div class="flex justify-between items-start mb-3">
+<div class="flex gap-3">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">water_drop</span>
+</div>
+<div>
+<h3 class="font-bold text-[#131811] dark:text-white">Irrigation Setup</h3>
+<div class="flex items-center gap-1 text-[#6b8961] text-xs">
+<span class="material-symbols-outlined text-xs">location_on</span>
+<span>5.1 km away • Gupta Agri</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary text-lg font-bold">₹500</p>
+<p class="text-[#6b8961] text-[10px] uppercase font-bold tracking-tighter">Daily Wage</p>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-[#f1f4f0] dark:border-[#2a3a26] pt-3 mt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="text-sm font-bold text-[#131811] dark:text-white">4.5</span>
+<span class="text-[#6b8961] text-xs">(42 reviews)</span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold shadow-sm">
+                            Apply
+                        </button>
+</div>
+</div>
+<!-- Job Card 3 (Machinery) -->
+<div class="bg-white dark:bg-background-dark p-4 rounded-xl border border-[#dee6db] dark:border-[#2a3a26] shadow-sm">
+<div class="flex justify-between items-start mb-3">
+<div class="flex gap-3">
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+</div>
+<div>
+<h3 class="font-bold text-[#131811] dark:text-white">Tractor Operator</h3>
+<div class="flex items-center gap-1 text-[#6b8961] text-xs">
+<span class="material-symbols-outlined text-xs">location_on</span>
+<span>8.7 km away • Green Valley</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary text-lg font-bold">₹1200</p>
+<p class="text-[#6b8961] text-[10px] uppercase font-bold tracking-tighter">Shift Price</p>
+</div>
+</div>
+<div class="flex items-center justify-between border-t border-[#f1f4f0] dark:border-[#2a3a26] pt-3 mt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="text-sm font-bold text-[#131811] dark:text-white">5.0</span>
+<span class="text-[#6b8961] text-xs">(210 reviews)</span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold shadow-sm">
+                            Apply
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Voice Command Floating Action Button -->
+<div class="fixed bottom-24 right-6">
+<button class="size-16 rounded-full bg-primary text-white shadow-2xl flex items-center justify-center animate-pulse border-4 border-white dark:border-background-dark">
+<span class="material-symbols-outlined text-3xl">mic</span>
+</button>
+</div>
+<!-- Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-[480px] mx-auto bg-white dark:bg-background-dark border-t border-[#dee6db] dark:border-[#2a3a26] px-6 py-3 flex justify-between items-center z-50">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">home</span>
+<span class="text-[10px] font-bold">Jobs</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#6b8961] dark:text-[#a1b79a]">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[10px] font-medium">Earnings</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#6b8961] dark:text-[#a1b79a]">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-[10px] font-medium">Messages</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#6b8961] dark:text-[#a1b79a]">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</div>
+</nav>
+</div>
+<!-- Padding for Mobile Safe Area -->
+<div class="h-safe-area-bottom pb-8 bg-white dark:bg-background-dark max-w-[480px] mx-auto"></div>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        @supports (padding: env(safe-area-inset-bottom)) {
+            .h-safe-area-bottom {
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+        }
+    </style>
+</body></html>
